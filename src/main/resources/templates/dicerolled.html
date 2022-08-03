@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Rolled the Dice!</title>
+</head>
+<body>
+
+<h1>You picked <span th:text="${num}">Number</span>!</h1>
+
+<div>
+    <p>The first roll was <span th:text="${roll1}">One</span><br>
+    <span th:if="${match1} == true">Your number matched!</span></p>
+</div>
+<div>
+    <p>The second roll was <span th:text="${roll2}">Two</span><br>
+    <span th:if="${match2} == true">Your number matched!</span></p>
+</div>
+<div>
+    <p>The third roll was <span th:text="${roll3}">Three</span><br>
+    <span th:if="${match3} == true">Your number matched!</span></p>
+</div>
+<div>
+    <p>The fourth roll was <span th:text="${roll4}">Four</span><br>
+        <span th:if="${match4} == true">Your number matched!</span></p>
+</div>
+<div>
+    <p>The fifth roll was <span th:text="${roll5}">Five</span><br>
+    <span th:if="${match5} == true">Your number matched!</span></p>
+</div>
+
+</body>
+</html>
