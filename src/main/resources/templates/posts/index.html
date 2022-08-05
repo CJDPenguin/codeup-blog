@@ -7,10 +7,17 @@
 </head>
 <body>
 <div th:replace="/fragments/navbar"></div>
+<form action="/posts" method="post">
+<label for="category">Filter: </label>
+<select id="category" name="category">
+    <option th:each = "tag: ${tags}" th:text="${tag.name}" th:value = "${tag.id}"></option>
+</select>
+    <input type="submit" value="filter">
+</form>
 <div th:each="post : ${posts}">
     <div>
-        <h3 th:text="${post.getTitle()}">Title</h3>
-        <p th:text="${post.getBody()}">Body</p>
+        <a th:href="@{/posts/{id} (id=${post.id})}"><h3 th:text="${post.title}">Title</h3></a>
+        <p th:text="${post.body}">Body</p>
     </div>
 </div>
 <div th:replace="/fragments/footer"></div>
