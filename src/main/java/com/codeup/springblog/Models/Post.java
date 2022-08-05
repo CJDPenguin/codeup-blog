@@ -18,6 +18,10 @@ public class Post {
     @Column
     private String body;
 
+    public Post() {
+
+    }
+
     public Post(long auth_id, String title, String body) {
         this.auth_id = auth_id;
         this.title = title;

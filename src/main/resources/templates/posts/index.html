@@ -9,8 +9,8 @@
 <div th:replace="/fragments/navbar"></div>
 <div th:each="post : ${posts}">
     <div>
-        <h3 th:text="${post.title}">Title</h3>
-        <p th:text="${post.body}">Body</p>
+        <h3 th:text="${post.getTitle()}">Title</h3>
+        <p th:text="${post.getBody()}">Body</p>
     </div>
 </div>
 <div th:replace="/fragments/footer"></div>
