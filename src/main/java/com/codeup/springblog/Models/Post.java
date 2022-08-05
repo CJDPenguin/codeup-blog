@@ -28,6 +28,12 @@ public class Post {
         this.body = body;
     }
 
+    public Post(User user, String title, String body) {
+        this.user = user;
+        this.title = title;
+        this.body = body;
+    }
+
     public String getTitle() {
         return title;
     }
