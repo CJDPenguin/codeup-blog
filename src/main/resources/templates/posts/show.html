@@ -10,6 +10,7 @@
 <h2 th:text="${post.title}">Post Title</h2>
 <p th:text="${post.body}">Post Body</p>
 <p>Contact poster at: <span th:text="${post.getUser().getEmail()}">E-mail</span></p>
+<a th:href="@{/posts/{id}/edit (id=${post.id})}"><button>Edit</button></a>
 <div th:replace="/fragments/footer"></div>
 </body>
 </html>

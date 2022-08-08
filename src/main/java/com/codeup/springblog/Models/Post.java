@@ -48,6 +48,10 @@ public class Post {
         return id;
     }
 
+    public void setId(long id) {
+        this.id = id;
+    }
+
     public String getTitle() {
         return title;
     }
@@ -68,7 +72,15 @@ public class Post {
         return user;
     }
 
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     public List<Tag> getTags() {
         return tags;
+    }
+
+    public void setTags(List<Tag> tags) {
+        this.tags = tags;
     }
 }
