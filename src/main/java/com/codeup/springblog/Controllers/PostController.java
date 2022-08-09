@@ -81,7 +81,25 @@ public class PostController {
 
     @GetMapping("posts/{id}/edit")
     public String editPost(@PathVariable long id, Model model) {
-        model.addAttribute("post", postDao.getById(id));
-        return "posts/create";
+        Post post = postDao.getById(id);
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if(post.getUser().getId() == user.getId()) {
+            model.addAttribute("post", post);
+            return "posts/create";
+        } else {
+            return "redirect:/posts";
+        }
+    }
+
+    @PostMapping("posts/{id}/delete")
+    public String deletePost(@PathVariable long id) {
+        Post post = postDao.getById(id);
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if(post.getUser().getId() == user.getId()) {
+            postDao.delete(post);
+            return "redirect:/posts";
+        } else {
+            return "redirect:/posts";
+        }
     }
 }

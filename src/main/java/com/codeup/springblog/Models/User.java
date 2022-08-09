@@ -32,6 +32,10 @@ public class User {
         password = copy.password;
     }
 
+    public long getId() {
+        return id;
+    }
+
     public String getUsername() {
         return username;
     }
