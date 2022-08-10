@@ -1,12 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <div th:replace="/fragments/header"></div>
-    <title>Create a Post</title>
-</head>
+<head th:replace="fragments/fragment :: head ('Create Post')"></head>
 <body>
-<div th:replace="/fragments/navbar"></div>
+<nav th:replace="/fragments/fragment :: navbar"></nav>
 <form th:action="@{/posts/create}" th:method="post" th:object="${post}" >
     <label for="title">Title: </label>
     <input type="text" th:field="*{title}" name="title" id="title" placeholder="Title your post">
@@ -15,6 +11,6 @@
     <input type="hidden" th:field="*{id}">
     <input type="submit" value="Create">
 </form>
-<div th:replace="/fragments/footer"></div>
+<footer th:replace="fragments/fragment :: footer"></footer>
 </body>
 </html>

@@ -1,12 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <div th:replace="/fragments/header"></div>
-    <meta charset="UTF-8">
-    <title>Posts</title>
-</head>
+<head th:replace="fragments/fragment :: head ('All Posts')"></head>
 <body>
-<div th:replace="/fragments/navbar"></div>
+<nav th:replace="/fragments/fragment :: navbar"></nav>
 <form action="/posts" method="post">
 <label for="category">Filter: </label>
 <select id="category" name="category">
@@ -20,6 +16,6 @@
         <p th:text="${post.body}">Body</p>
     </div>
 </div>
-<div th:replace="/fragments/footer"></div>
+<footer th:replace="fragments/fragment :: footer"></footer>
 </body>
 </html>

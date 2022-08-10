@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <title>Log In</title>
-</head>
+<head th:replace="fragments/fragment :: head ('Login')"></head>
 <body>
+<nav th:replace="/fragments/fragment :: navbar"></nav>
 <h1>Log In</h1>
 <div th:if="${param.error}">
     Invalid Username and Password.
@@ -20,5 +18,6 @@
     <input id="password" name="password" type="password" />
     <input type="submit" value="Log In" />
 </form>
+<footer th:replace="fragments/fragment :: footer"></footer>
 </body>
 </html>
